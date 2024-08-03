@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "https://my-project-ashy-eta.vercel.app"}})
 
 @app.route('/display', methods=['POST', 'OPTIONS'])
 def display():
@@ -15,7 +15,7 @@ def display():
 
 def _build_cors_preflight_response():
     response = Flask.Response()
-    response.headers.add("Access-Control-Allow-Origin", "*")
+    response.headers.add("Access-Control-Allow-Origin", "https://my-project-ashy-eta.vercel.app")
     response.headers.add("Access-Control-Allow-Headers", "Content-Type")
     response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
     return response
