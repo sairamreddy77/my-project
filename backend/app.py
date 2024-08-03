@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify,Response
+from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -14,7 +14,7 @@ def display():
         return _corsify_actual_response(jsonify({"output": input_text}))
 
 def _build_cors_preflight_response():
-    response = Flask.Response()
+    response = Response()
     response.headers.add("Access-Control-Allow-Origin", "*")
     response.headers.add("Access-Control-Allow-Headers", "Content-Type")
     response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
