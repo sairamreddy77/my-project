@@ -3,7 +3,8 @@ from flask_cors import CORS
 import logging
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://my-project-ashy-eta.vercel.app"}})
+
 
 logging.basicConfig(level=logging.DEBUG)
 
